@@ -12,12 +12,12 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: run frontend tests
-        run: cd src/frontend && npm ci && npm test
+        run: cd src/frontend && npm i && npm test
 
   backend:
     runs-on: ubuntu-latest
     container:
-      image: recordsponge/expungeservice:latest
+      image: recordsponge/expungeservice:dev
       env:
         PGUSER: postgres
         PGDATABASE: record_expunge_test
